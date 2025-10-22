@@ -8,7 +8,9 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint:ts": "npx eslint .",
-    "lint:ts:fix": "npx eslint . --fix"
+    "lint:ts:fix": "npx eslint . --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,7 @@
     "css-loader": "^6.6.0",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-i18n": "^2.4.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "file-loader": "^6.2.0",
