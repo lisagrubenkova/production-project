@@ -6,3 +6,15 @@
   --inverted-primary-color: #2ecf06;
   --inverted-secondary-color: #abd2a1;
 }
+
+.app.light {
+  --bg-color: #f5f6f8;
+  --inverted-bg-color: #151517;
+  --primary-color: #7d4ef6;         /* спокойный фиолетово-лазурный */
+  --secondary-color: #b29cf9;       /* светлый вариант для hover/дополнений */
+  --inverted-primary-color: #2fe0a5; /* зеркальный к фиолетовому — мягкий бирюзовый */
+  --inverted-secondary-color: #91e4c7;
+  --text-color: #1e1e23;
+  --muted-text-color: #6a6a72;
+  --border-color: #d8d9e0;
+}
