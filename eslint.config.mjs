@@ -45,7 +45,8 @@ export default defineConfig([
       'no-unused-vars': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
       'react/button-has-type': 'error',
-      '@typescript-eslint/ban-ts-comment': 'warn'
+      '@typescript-eslint/ban-ts-comment': 'warn',
+      "prettier/prettier": ["error", { "endOfLine": "auto" }]
     },
   },
 ])
