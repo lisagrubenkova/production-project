@@ -21,7 +21,8 @@ export default defineConfig([
       "**/coverage/**",
       "**/*.min.js",
       "**/package-lock.json",
-      "**/yarn.lock"
+      "**/yarn.lock",
+      "storybook-static/**"
     ]
   },
   {
