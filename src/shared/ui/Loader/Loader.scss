@@ -13,7 +13,7 @@
 
 .lds-ripple div {
   position: absolute;
-  border: 4px solid currentColor;
+  border: 4px solid currentcolor;
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -31,6 +31,7 @@
     height: 8px;
     opacity: 0;
   }
+
   4.9% {
     top: 36px;
     left: 36px;
@@ -38,6 +39,7 @@
     height: 8px;
     opacity: 0;
   }
+
   5% {
     top: 36px;
     left: 36px;
@@ -45,6 +47,7 @@
     height: 8px;
     opacity: 1;
   }
+
   100% {
     top: 0;
     left: 0;
