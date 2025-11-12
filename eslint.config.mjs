@@ -8,6 +8,7 @@ import pluginReact from 'eslint-plugin-react'
 import { defineConfig } from 'eslint/config'
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default defineConfig([
    {
@@ -31,11 +32,12 @@ export default defineConfig([
       js,
       prettier: prettierPlugin
      },
-    extends: ['js/recommended', prettierConfig],
+    extends: ['js/recommended', prettierConfig, ],
     languageOptions: { globals: globals.browser },
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  reactHooks.configs.flat['recommended-latest'],
   {
     files: ['**/*.{jsx,tsx,ts}'],
     settings: {
