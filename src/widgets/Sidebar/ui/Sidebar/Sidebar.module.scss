@@ -29,31 +29,11 @@
    align-items: center;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  gap: 10px
-}
-
-.icon {
-  fill: var(--secondary-color)
-}
-
-.link {
-  opacity: 1;
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
   .switchers {
     flex-direction: column;
     align-items: center;
-  }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
   }
 }

@@ -19,7 +19,14 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Lisa",
+    "lastname": "Grubenkova",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Bryansk",
+    "username": "admin",
+    "avatar": ""
   },
   "users": [
     {
