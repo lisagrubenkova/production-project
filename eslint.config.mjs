@@ -53,7 +53,8 @@ export default defineConfig([
       'react/button-has-type': 'error',
       '@typescript-eslint/ban-ts-comment': 'warn',
       'react/display-name': 'off',
-      "prettier/prettier": ["error", { "endOfLine": "auto" }]
+      "prettier/prettier": ["error", { "endOfLine": "auto" }],
+
     },
   },
 ])

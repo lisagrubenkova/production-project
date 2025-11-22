@@ -7,7 +7,7 @@ const writeFileAsync = promisify(writeFile);
 
 const __dirname = import.meta.dirname;
 
-// eslint-disable-next-line no-undef
+ 
 const lokiDir = joinPath(__dirname, '..', '.loki');
 const actualDir = joinPath(lokiDir, 'current');
 const expectedDir = joinPath(lokiDir, 'reference');
