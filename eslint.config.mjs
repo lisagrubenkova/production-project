@@ -54,7 +54,7 @@ export default defineConfig([
       '@typescript-eslint/ban-ts-comment': 'warn',
       'react/display-name': 'off',
       "prettier/prettier": ["error", { "endOfLine": "auto" }],
-
+      'no-undef': 'off',
     },
   },
 ])

@@ -22,13 +22,13 @@ export const Input = memo((props: InputProps) => {
     autoFocus,
     ...otherPrors
   } = props
-  const ref = useRef<HTMLInputElement>()
+  const ref = useRef<HTMLInputElement | null>(null)
   const [isFocused, setIsFocused] = useState(false)
   const [caretPosition, setCaretPosition] = useState(0)
 
   useEffect(() => {
     if (autoFocus) {
-      ref.current.focus()
+      ref.current?.focus()
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsFocused(true)
     }

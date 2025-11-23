@@ -3,15 +3,14 @@ import cls from './LoginForm.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button, ThemeButton } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
-import { memo, useCallback, useEffect, useState } from 'react'
-import { useDispatch, useSelector, useStore } from 'react-redux'
+import { memo, useCallback } from 'react'
+import { useSelector } from 'react-redux'
 import {
   loginActions,
   loginReducer,
 } from 'features/AuthByUsername/model/slice/loginSlice'
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider'
 import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername'
 import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading'
@@ -57,7 +56,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const result = await dispatch(loginByUsername({ username, password }))
     console.log(result)
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess()
+      onSuccess?.()
     }
   }, [onSuccess, dispatch, password, username])
 
