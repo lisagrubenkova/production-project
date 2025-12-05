@@ -100,3 +100,10 @@ Disabled.args = {
   theme: ThemeButton.OUTLINE,
   disabled: true,
 }
+
+export const Red = Template.bind({})
+Disabled.args = {
+  children: 'Text',
+  theme: ThemeButton.OUTLINE_RED,
+  disabled: true,
+}

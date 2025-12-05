@@ -3,15 +3,26 @@
     border: 2px solid var(--inverted-bg-color);
 }
 
-.header {
+.loading,
+.error {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
 }
 
-.editBtn {
-    margin-left: auto;
+.avatarWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.editing {
+    border: 2px solid var(--inverted-primary-color)
 }
 
 .data {
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
