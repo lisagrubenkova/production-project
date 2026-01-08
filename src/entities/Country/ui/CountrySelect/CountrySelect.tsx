@@ -2,7 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Select } from 'shared/ui/Select/Select'
 import { memo, useCallback } from 'react'
 import { Country } from '../../model/types/country'
-import cls from './CountrySelect.module.scss'
 
 interface CountrySelectProps {
   className?: string
@@ -30,7 +29,7 @@ export const CountrySelect = memo(
 
     return (
       <Select
-        className={classNames(cls.CountryySelect)}
+        className={classNames('', {}, [className])}
         label="Укажите страну"
         options={options}
         value={value}

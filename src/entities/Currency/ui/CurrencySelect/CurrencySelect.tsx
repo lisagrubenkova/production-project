@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './CurrencySelect.module.scss'
 import { Select } from 'shared/ui/Select/Select'
 import { Currency } from '../../model/types/currency'
 import { memo, useCallback } from 'react'
@@ -28,7 +27,7 @@ export const CurrencySelect = memo(
 
     return (
       <Select
-        className={classNames(cls.CurrencySelect)}
+        className={classNames('', {}, [className])}
         label="Укажите валюту"
         options={options}
         value={value}
