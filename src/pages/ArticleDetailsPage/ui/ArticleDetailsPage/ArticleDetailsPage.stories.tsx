@@ -26,6 +26,10 @@ const article: Article = {
   img: 'https://i.pinimg.com/originals/28/b0/d1/28b0d189571e22609f0e9378da7b09a4.png',
   views: 1022,
   createdAt: '24.12.2025',
+  user: {
+    id: '1',
+    username: 'admin',
+  },
   type: [ArticleType.IT],
   blocks: [
     {
