@@ -4,10 +4,12 @@ import { IComment } from '../../model/types/comment'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Text } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface CommentItemProps {
   className?: string
-  comment: IComment
+  comment?: IComment
   isLoading?: boolean
 }
 
@@ -18,7 +20,9 @@ export const CommentItem = ({
 }: CommentItemProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(cls.CommentItem, {}, [className])}>
+      <div
+        className={classNames(cls.CommentItem, {}, [className, cls.loading])}
+      >
         <div className={cls.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton height={16} width={100} />
@@ -27,15 +31,22 @@ export const CommentItem = ({
       </div>
     )
   }
+
+  if (!comment) {
+    return null
+  }
   return (
     <div className={classNames(cls.CommentItem, {}, [className])}>
-      <div className={cls.header}>
-        {comment.user.avatar ? (
+      <AppLink
+        to={`${RoutePath.profile}${comment?.user.id}`}
+        className={cls.header}
+      >
+        {comment?.user.avatar ? (
           <Avatar size={30} src={comment.user.avatar} />
         ) : null}
-        <Text title={comment.user.username} />
-      </div>
-      <Text text={comment.text} className={cls.text} />
+        <Text title={comment?.user.username} />
+      </AppLink>
+      <Text text={comment?.text} className={cls.text} />
     </div>
   )
 }

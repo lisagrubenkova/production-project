@@ -19,7 +19,9 @@
       "img": "https://i.pinimg.com/originals/28/b0/d1/28b0d189571e22609f0e9378da7b09a4.png",
       "views": 1022,
       "createdAt": "24.12.2025",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,18 +102,44 @@
       "text": "some comment",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "scsdccdsdccdcd",
+      "id": "2CNwG2m"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "привет привет",
+      "id": "IlEB1Kf"
     }
   ],
-  "profile": {
-    "first": "Lisaaa",
-    "lastname": "Grubenkova",
-    "age": 23,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "",
-    "username": "adminka",
-    "avatar": "https://i.pinimg.com/originals/76/1a/74/761a74df5efbf6c9534da0fc9812e340.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Lisa",
+      "lastname": "Grubenkova",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "",
+      "username": "adminka",
+      "avatar": "https://i.pinimg.com/originals/76/1a/74/761a74df5efbf6c9534da0fc9812e340.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Lizzy",
+      "lastname": "Grubenkova",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "",
+      "username": "adminka",
+      "avatar": "https://i.pinimg.com/originals/76/1a/74/761a74df5efbf6c9534da0fc9812e340.jpg"
+    }
+  ],
   "users": [
     {
       "id": "1",
