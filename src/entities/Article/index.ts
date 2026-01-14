@@ -1,3 +1,5 @@
+export { ArticlesViewSwitcher } from './ui/ArticlesViewSwitcher/ArticlesViewSwitcher'
+
 export { ArticleView } from './model/types/article'
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
