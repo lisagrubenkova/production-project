@@ -14,17 +14,6 @@ interface ArticleListProps {
 export const ArticleList = (props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.PLATE } = props
 
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-        {new Array(view === ArticleView.PLATE ? 9 : 3)
-          .fill(0)
-          .map((item, index) => (
-            <ArticleListItemSkeleton view={view} key={index} />
-          ))}
-      </div>
-    )
-  }
   const renderArticle = (article: Article) => {
     return (
       <ArticleListItem
@@ -38,6 +27,17 @@ export const ArticleList = (props: ArticleListProps) => {
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
+      {isLoading && (
+        <div
+          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        >
+          {new Array(view === ArticleView.PLATE ? 9 : 3)
+            .fill(0)
+            .map((item, index) => (
+              <ArticleListItemSkeleton view={view} key={index} />
+            ))}
+        </div>
+      )}
     </div>
   )
 }
