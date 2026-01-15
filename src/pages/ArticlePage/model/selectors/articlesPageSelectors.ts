@@ -18,3 +18,6 @@ export const getArticlesPageHasMore = (state: StateSchema) =>
 
 export const getArticlesPageNum = (state: StateSchema) =>
   state.articlesPage?.page || 1
+
+export const getArticlesPageInited = (state: StateSchema) =>
+  state.articlesPage?._inited

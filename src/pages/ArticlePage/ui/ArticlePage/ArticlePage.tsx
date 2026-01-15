@@ -15,17 +15,14 @@ import {
 } from 'pages/ArticlePage/model/slices/articlePageSlice'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { fetchArticlesList } from 'pages/ArticlePage/model/services/fetchArticlesList/fetchArticlesList'
 import { useSelector } from 'react-redux'
 import {
-  getArticlesPageError,
-  getArticlesPageHasMore,
   getArticlesPageIsLoading,
-  getArticlesPageNum,
   getArticlesPageView,
 } from 'pages/ArticlePage/model/selectors/articlesPageSelectors'
 import { Page } from 'shared/ui/Page/Page'
 import { fetchNextArticlesPage } from 'pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
+import { initArticlesPage } from 'pages/ArticlePage/model/services/initArticlesPage/initArticlesPage'
 
 interface ArticlePageProps {
   className?: string
@@ -55,15 +52,10 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
   }, [dispatch])
 
   useInitialEffect(() => {
-    dispatch(articlesPageAction.initState())
-    dispatch(
-      fetchArticlesList({
-        page: 1,
-      }),
-    )
+    dispatch(initArticlesPage)
   })
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlePage, {}, [className])}
