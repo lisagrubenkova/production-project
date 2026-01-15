@@ -20,7 +20,7 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from 'pages/ArticlePage/model/selectors/articlesPageSelectors'
-import { Page } from 'shared/ui/Page/Page'
+import { Page } from 'widgets/Page/Page'
 import { fetchNextArticlesPage } from 'pages/ArticlePage/model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from 'pages/ArticlePage/model/services/initArticlesPage/initArticlesPage'
 
