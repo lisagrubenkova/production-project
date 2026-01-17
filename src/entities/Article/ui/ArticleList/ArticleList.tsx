@@ -3,6 +3,8 @@ import cls from './ArticleList.module.scss'
 import { Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { memo } from 'react'
+import { Text, TextSize } from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
   className?: string
@@ -11,7 +13,14 @@ interface ArticleListProps {
   view?: ArticleView
 }
 
-export const ArticleList = (props: ArticleListProps) => {
+const getSkeletons = (view: ArticleView) =>
+  new Array(view === ArticleView.PLATE ? 9 : 3)
+    .fill(0)
+    .map((item, index) => (
+      <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
+    ))
+
+export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.PLATE } = props
 
   const renderArticle = (article: Article) => {
@@ -24,20 +33,18 @@ export const ArticleList = (props: ArticleListProps) => {
       />
     )
   }
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+        <Text size={TextSize.L} title="Статьи не найдены" />
+      </div>
+    )
+  }
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
-      {isLoading && (
-        <div
-          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-        >
-          {new Array(view === ArticleView.PLATE ? 9 : 3)
-            .fill(0)
-            .map((item, index) => (
-              <ArticleListItemSkeleton view={view} key={index} />
-            ))}
-        </div>
-      )}
+      {isLoading && getSkeletons(view)}
     </div>
   )
-}
+})
