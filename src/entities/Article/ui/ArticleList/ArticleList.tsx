@@ -3,7 +3,7 @@ import cls from './ArticleList.module.scss'
 import { Article, ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
-import { memo } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 
 interface ArticleListProps {
@@ -11,6 +11,7 @@ interface ArticleListProps {
   articles: Article[]
   isLoading?: boolean
   view?: ArticleView
+  target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -21,7 +22,13 @@ const getSkeletons = (view: ArticleView) =>
     ))
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleView.PLATE } = props
+  const {
+    className,
+    articles,
+    isLoading,
+    view = ArticleView.PLATE,
+    target,
+  } = props
 
   const renderArticle = (article: Article) => {
     return (
@@ -30,6 +37,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         article={article}
         view={view}
         key={article.id}
+        target={target}
       />
     )
   }
