@@ -3,7 +3,7 @@ import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { ArticleDetails, ArticleList } from 'entities/Article'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Text, TextSize } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
 import {
@@ -27,6 +27,7 @@ import { getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slices
 import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations'
 import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -46,11 +47,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const recommendationsIsLoading = useSelector(
     getArticleRecommendationsIsLoading,
   )
-  const navigate = useNavigate()
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
-  }, [navigate])
   const onSendComment = useCallback(
     (text: string) => {
       dispatch(addCommentForArticle(text))
@@ -72,9 +68,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button theme={ThemeButton.OUTLINE} onClick={onBackToList}>
-          Назад у списку
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           size={TextSize.L}
