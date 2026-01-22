@@ -9,6 +9,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
     html: '',
     entry: '',
     src: path.resolve(process.cwd(), 'src'),
+    locales: path.resolve(process.cwd(), 'public', 'locales'),
+    buildLocales: path.resolve(process.cwd(), 'build', 'locales'),
   }
 
   config!.resolve!.modules = [paths.src, 'node_modules']
